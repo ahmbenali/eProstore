@@ -51,6 +51,10 @@ a {
     @apply flex flex-col;
   }
 
+  .flex-col-center {
+    @apply flex flex-col justify-center items-center;
+  }
+
   .h1-bold {
     @apply font-bold text-3xl lg:text-4xl;
   }
