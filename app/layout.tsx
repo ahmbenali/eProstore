@@ -1,4 +1,5 @@
 import type {Metadata} from 'next'
+import {ThemeProvider} from 'next-themes'
 import {Inter} from 'next/font/google'
 import {PropsWithChildren} from 'react'
 
@@ -20,13 +21,20 @@ export const metadata: Metadata = {
   metadataBase: new URL(serverUrl),
 }
 
-const RootLayout = ({children}: Readonly<PropsWithChildren>) => {
+function RootLayout({children}: Readonly<PropsWithChildren>) {
   return (
-    <html
-      lang='en'
-      suppressHydrationWarning
-    >
-      <body className={`${inter.className}`}>{children}</body>
+    <html lang='en' suppressHydrationWarning>
+      <body className={`${inter.className}`}>
+        {' '}
+        <ThemeProvider
+          attribute='class'
+          defaultTheme='dark'
+          enableSystem
+          disableTransitionOnChange
+        >
+          {children}
+        </ThemeProvider>
+      </body>
     </html>
   )
 }

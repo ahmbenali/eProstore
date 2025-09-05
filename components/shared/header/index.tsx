@@ -7,6 +7,7 @@ import {useEffect, useState} from 'react'
 
 import {Button} from '~/components/ui/button'
 import {APP_NAME} from '~/lib/constants'
+import ModeToggle from './mode-toggle'
 
 function Header() {
   // to fix the hydration error (mostly caused by extensions)
@@ -37,7 +38,8 @@ function Header() {
             </span>
           </Link>
         </div>
-        <div className='flex items-center gap-3 '>
+        <div className='flex items-center gap-3'>
+          <ModeToggle />
           <Button asChild variant='ghost'>
             <Link href='/cart'>
               <ShoppingCart />
