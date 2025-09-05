@@ -1,13 +1,11 @@
 'use client'
 
-import {ShoppingCart, UserIcon} from 'lucide-react'
 import Image from 'next/image'
 import Link from 'next/link'
 import {useEffect, useState} from 'react'
 
-import {Button} from '~/components/ui/button'
 import {APP_NAME} from '~/lib/constants'
-import ModeToggle from './mode-toggle'
+import Menu from './menu'
 
 function Header() {
   // to fix the hydration error (mostly caused by extensions)
@@ -22,10 +20,10 @@ function Header() {
   }
 
   return (
-    <header className=' w-full border-b'>
+    <header className='w-full border-b'>
       <div className='wrapper  flex-between'>
-        <div className=' '>
-          <Link href='/' className='flex-start'>
+        <div className='flex-start '>
+          <Link href='/' className='flex gap-2'>
             <Image
               priority={true}
               src='/images/logo.svg'
@@ -33,26 +31,12 @@ function Header() {
               height={32}
               alt={`${APP_NAME} logo`}
             />
-            <span className='hidden lg:block font-bold text-2xl ml-3'>
+            <span className='hidden lg:block font-bold text-2xl'>
               {APP_NAME}
             </span>
           </Link>
         </div>
-        <div className='flex items-center gap-3'>
-          <ModeToggle />
-          <Button asChild variant='ghost'>
-            <Link href='/cart'>
-              <ShoppingCart />
-              Cart
-            </Link>
-          </Button>
-          <Button asChild variant='secondary'>
-            <Link href='/sign-in'>
-              <UserIcon />
-              Sign In
-            </Link>
-          </Button>
-        </div>
+        <Menu />
       </div>
     </header>
   )

@@ -1,6 +1,5 @@
 'use client';
 
-import { useEffect, useState } from 'react';
 import { useTheme } from 'next-themes';
 import { Button } from '~/components/ui/button';
 import {
@@ -16,13 +15,15 @@ import { MoonIcon, SunIcon, SunMoon } from 'lucide-react';
 function ModeToggle() {
   const {theme, setTheme} = useTheme()
 
-const ThemeIcon = () => theme === 'system'
-  ? <SunMoon />
-  : theme === 'dark'
-  ? <MoonIcon />
-  : <SunIcon />
-
-
+const ThemeIcon = () =>
+  theme === 'system' ? (
+    <SunMoon />
+  ) : theme === 'dark' ? (
+    <MoonIcon />
+  ) : (
+    <SunIcon />
+  )
+  
 const ThemeBoxItem = ({label, mode}: {label: string; mode: string}) =>
   <CheckboxItem
     checked={theme === mode}
