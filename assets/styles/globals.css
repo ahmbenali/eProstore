@@ -60,7 +60,7 @@ a {
   }
 
   .h2-bold {
-    @apply font-bold text-2xl lg:text-3xl;
+    @apply font-bold text-2xl lg:text-3xl mb-4;
   }
 
   .h3-bold {
