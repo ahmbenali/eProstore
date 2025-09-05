@@ -1,3 +1,5 @@
+import ProductCard from './product-card'
+
 /* eslint-disable @typescript-eslint/no-explicit-any */
 type Props = {
   data: any[]
@@ -27,8 +29,8 @@ function ProductList({data, title, limit}: Props) {
         !!length && (
           <div className='grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4'>
             {
-              limitedData.map(({name}: any) => (
-                <div key={name}>{name}</div>
+              limitedData.map((product: any) => (
+                <ProductCard key={product.slug} product={product} />
               ))
             }
           </div>
