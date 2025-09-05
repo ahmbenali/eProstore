@@ -4,7 +4,7 @@ function HomePage() {
   return (
     <div className=''>
       <title>Home</title>
-      <Button>Submit</Button>
+      {/* <Button>Submit</Button> */}
     </div>
   )
 }
