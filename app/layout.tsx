@@ -1,14 +1,19 @@
-import type {Metadata} from "next";
-import {Inter} from "next/font/google";
-import {PropsWithChildren} from "react";
+import type {Metadata} from 'next'
+import {Inter} from 'next/font/google'
+import {PropsWithChildren} from 'react'
 
-import '~/assets/styles/globals.css';
+import '~/assets/styles/globals.css'
+import {APP_NAME, APP_DESCRIPTION, SERVER_URL} from '~/lib/constants'
 
-const inter = Inter({ subsets: ['latin'] });
+const inter = Inter({subsets: ['latin']})
 
 export const metadata: Metadata = {
-  title: 'E-Commerce App',
-  description: 'A modern store built with Next.js, ShadCN, and Prisma.',
+  title: {
+    template: `%s | ${APP_NAME}`,
+    default: APP_NAME,
+  },
+  description: APP_DESCRIPTION,
+  metadataBase: new URL(SERVER_URL),
 }
 
 function RootLayout({children}: Readonly<PropsWithChildren>) {
@@ -22,4 +27,4 @@ function RootLayout({children}: Readonly<PropsWithChildren>) {
   )
 }
 
-export default RootLayout;
+export default RootLayout
