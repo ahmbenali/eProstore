@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/no-explicit-any */
 import {neonConfig, Pool} from '@neondatabase/serverless'
 import {PrismaNeon} from '@prisma/adapter-neon'
 import {PrismaClient} from '~/lib/generated/prisma'
@@ -23,24 +22,48 @@ const pool = new Pool({connectionString})
 
 
 // Use the pool's connection method
-const adapter = new PrismaNeon(pool as any)
+// const adapter = new PrismaNeon({pool} )
+const adapter = new PrismaNeon({ connectionString })
 
 // Extends the PrismaClient with a custom result transformer to convert the price and rating fields to strings.
-const prisma = new PrismaClient({adapter}).$extends({
+// const prisma = new PrismaClient({adapter}).$extends({
+//   result: {
+//     product: {
+//       price: {
+//         compute(product) {
+//           return product.price.toString()
+//         },
+//       },
+//       rating: {
+//         compute(product) {
+//           return product.rating.toString()
+//         },
+//       },
+//     },
+//   },
+// })
+
+export const prisma = new PrismaClient({
+  datasources: {
+    db: {
+      url: connectionString,
+    },
+  },
+}).$extends({
   result: {
     product: {
       price: {
         compute(product) {
-          return product.price.toString()
+          return product.price.toString();
         },
       },
       rating: {
         compute(product) {
-          return product.rating.toString()
+          return product.rating.toString();
         },
       },
     },
   },
-})
+});
 
 export {prisma as db}
