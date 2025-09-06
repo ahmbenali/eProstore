@@ -15,4 +15,13 @@ const getLatestProducts = async () => {
   return convertToPlainObject(data)
 }
 
-export {getLatestProducts}
+const getProductBySlug = async (slug: string) => {
+  return await db.product.findFirst({
+    where: {slug,},
+  })
+}
+
+export {
+  getLatestProducts,
+  getProductBySlug
+}
