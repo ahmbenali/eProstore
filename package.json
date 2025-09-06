@@ -7,8 +7,10 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "postinstall": "prisma generate"
-
+    "postinstall": "prisma generate",
+    "db:seed": "tsx db/seed.ts",
+    "db:studio": "bunx prisma studio",
+    "db:reset": "bunx prisma migrate reset --force"
   },
   "dependencies": {
     "@radix-ui/react-dialog": "^1.1.15",
@@ -35,6 +37,7 @@
     "eslint": "^9",
     "eslint-config-next": "15.2.3",
     "prisma": "^6.15.0",
+    "tsx": "^4.20.5",
     "tw-animate-css": "^1.3.8",
     "typescript": "^5"
   }

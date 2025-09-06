@@ -32,7 +32,7 @@ function ProductCard({ product }: { product: any }) {
           <h2 className='text-sm font-medium'>{name}</h2>
         </Link>
         <div className='flex-between gap-4'>
-          <p>{rating} stars</p>
+          <p>{+rating} stars</p>
           {!!stock && <ProductPrice value={+price} />}
           {!stock && <p className='text-destructive'>Out of Stock</p>}
         </div>

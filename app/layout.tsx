@@ -25,7 +25,6 @@ function RootLayout({children}: Readonly<PropsWithChildren>) {
   return (
     <html lang='en' suppressHydrationWarning>
       <body className={`${inter.className}`}>
-        {' '}
         <ThemeProvider
           attribute='class'
           defaultTheme='dark'
