@@ -5,7 +5,7 @@ import {formatNumberWithDecimal} from './utils'
 const currency = z
   .string()
   .refine(
-    value => /^\d+(\.\d{2})?$/.test(formatNumberWithDecimal(Number(value))),
+    value => /^\d+(\.\d{2})?$/.test(formatNumberWithDecimal(+value)),
     'Price must have exactly two decimal places (e.g., 49.99)'
   )
 
@@ -21,6 +21,7 @@ export const insertProductSchema = z.object({
 
   description: z.string().min(3, 'Description must be at least 3 characters'),
 
+  // stock comes via input as a string, so we need to coerce it to a number
   stock: z.coerce.number(),
 
   images: z.array(z.string()).min(1, 'Product must have at least one image'),

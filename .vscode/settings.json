@@ -7,7 +7,6 @@
     "**/.DS_Store": true,
     "**/Thumbs.db": true,
     ".idea": true,
-    ".next": true,
     ".vscode": true,
     "node_modules": true,
     ".gitignore": true,
@@ -20,7 +19,6 @@
   },
   "hide-files.files": [
     ".idea",
-    ".next",
     ".vscode",
     "node_modules",
     ".gitignore",

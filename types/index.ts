@@ -1,7 +1,9 @@
 import z from 'zod'
 import {insertProductSchema} from '~/lib/validator'
 
-type Product = z.infer<typeof insertProductSchema> & {
+type InsertProduct = z.infer<typeof insertProductSchema>
+
+type Product = InsertProduct  & {
   id: string
   createdAt: Date
   rating: string
