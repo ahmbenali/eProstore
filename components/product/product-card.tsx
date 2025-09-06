@@ -1,12 +1,13 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import Link from 'next/link'
 import Image from 'next/image'
+
+import ProductPrice from './product-price'
 import {
   Card,
   CardHeader as Header,
   CardContent as Content,
 } from '../ui/card'
-import ProductPrice from './product-price'
 
 function ProductCard({ product }: { product: any }) {
   const {name, slug, images, brand, rating, stock, price} = product
