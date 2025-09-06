@@ -1,4 +1,4 @@
-import {Product} from '~/lib/generated/prisma'
+import {Product} from '~/types'
 import ProductCard from './product-card'
 
 type Props = {

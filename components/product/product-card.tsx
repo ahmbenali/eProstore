@@ -1,7 +1,7 @@
-/* eslint-disable @typescript-eslint/no-explicit-any */
 import Link from 'next/link'
 import Image from 'next/image'
 
+import {Product} from '~/types'
 import ProductPrice from './product-price'
 import {
   Card,
@@ -9,8 +9,20 @@ import {
   CardContent as Content,
 } from '../ui/card'
 
-function ProductCard({ product }: { product: any }) {
-  const {name, slug, images, brand, rating, stock, price} = product
+type Props = {
+  product: Product
+}
+
+function ProductCard({ product }: Props) {
+  const {
+    name,
+    slug,
+    images,
+    brand,
+    rating,
+    stock,
+    price
+  } = product
 
   return (
     <Card className='w-full max-w-sm'>

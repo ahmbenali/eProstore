@@ -6,8 +6,11 @@ const APP_DESCRIPTION =
 const SERVER_URL =
   process.env.NEXT_PUBLIC_SERVER_URL || 'http://localhost:3000'
 
+const LATEST_PRODUCTS_LIMIT = +process.env.LATEST_PRODUCTS_LIMIT! || 4
+
 export {
   APP_NAME,
   APP_DESCRIPTION,
-  SERVER_URL
+  SERVER_URL,
+  LATEST_PRODUCTS_LIMIT
 }
