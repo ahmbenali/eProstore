@@ -20,8 +20,16 @@ async function ProductDetailsPage({params}: Props) {
   const product = await getProductBySlug(slug)
   if (!product) notFound()
 
-  const {brand, category, description, stock, name, numReviews, price, rating} =
-    product
+  const {
+    brand,
+    category,
+    description,
+    stock,
+    name,
+    numReviews,
+    price,
+    rating,
+  } = product
 
   return (
     <>
