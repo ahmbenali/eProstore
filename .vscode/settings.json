@@ -30,5 +30,8 @@
     "postcss.config.mjs",
     "README.md",
     "tsconfig.json"
+  ],
+  "cSpell.ignoreWords": [
+    "dbgenerated"
   ]
 }
