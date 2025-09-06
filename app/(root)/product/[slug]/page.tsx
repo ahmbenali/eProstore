@@ -7,6 +7,7 @@ import {
   Card,
   CardContent
 } from '~/components/ui'
+import ProductImages from '~/components/product/product-images'
 
 type Props = {
   params: Promise<{slug: string}>
@@ -27,7 +28,9 @@ async function ProductDetailsPage({params}: Props) {
       <section>
         <div className='grid md:grid-cols-5'>
           {/* Images Column */}
-          <div className='col-span-2'>{/* Add Images */}</div>
+          <div className='col-span-2'>
+            <ProductImages images={product.images} />
+          </div>
 
           {/* Details Column */}
           <div className='col-span-2 p-5'>
